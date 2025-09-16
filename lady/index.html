@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>饰品商店 - 首页</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>✨ 饰品商店</h1>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="cart.html">购物车</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>精选饰品</h2>
+    <div class="products">
+      <div class="card">
+        <a href="product.html?id=1"><img src="images/necklace.jpg" alt="水晶项链"></a>
+        <h3>水晶项链</h3>
+        <p class="price">¥199</p>
+        <button onclick="addToCart('水晶项链')">加入购物车</button>
+      </div>
+      <div class="card">
+        <a href="product.html?id=2"><img src="images/ring.jpg" alt="钻石戒指"></a>
+        <h3>钻石戒指</h3>
+        <p class="price">¥599</p>
+        <button onclick="addToCart('钻石戒指')">加入购物车</button>
+      </div>
+      <div class="card">
+        <a href="product.html?id=3"><img src="images/earring.jpg" alt="珍珠耳环"></a>
+        <h3>珍珠耳环</h3>
+        <p class="price">¥299</p>
+        <button onclick="addToCart('珍珠耳环')">加入购物车</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 饰品商店</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

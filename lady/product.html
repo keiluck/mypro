@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>商品详情</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>✨ 饰品商店</h1>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="cart.html">购物车</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="product-detail"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 饰品商店</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const accessories = [
+      { id: 1, name: "水晶项链", price: 199, desc: "优雅的水晶项链，闪耀迷人光彩。", image: "images/necklace.jpg" },
+      { id: 2, name: "钻石戒指", price: 599, desc: "奢华钻石戒指，象征永恒。", image: "images/ring.jpg" },
+      { id: 3, name: "珍珠耳环", price: 299, desc: "经典珍珠耳环，低调而高贵。", image: "images/earring.jpg" }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+    const product = accessories.find(p => p.id === id);
+
+    const detailDiv = document.getElementById("product-detail");
+
+    if(product) {
+      detailDiv.innerHTML = `
+        <h2>${product.name}</h2>
+        <img src="${product.image}" alt="${product.name}" width="200">
+        <p>价格：¥${product.price}</p>
+        <p>${product.desc}</p>
+        <button onclick="addToCart('${product.name}')">加入购物车</button>
+      `;
+    } else {
+      detailDiv.innerHTML = "<p>未找到该商品</p>";
+    }
+  </script>
+</body>
+</html>
